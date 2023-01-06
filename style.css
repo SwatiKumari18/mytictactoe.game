@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+nav
+{
+    background-image: linear-gradient(rgb(51, 7, 92), rgb(238, 130, 191), rgb(51, 7, 92));
+    color: hsl(0, 0%, 4%);
+    height: 100px;
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 50px;
+    padding: 25px;
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+nav ul
+{
+    list-style-type: none;
+    animation: jump 1s infinite;
+    position: relative !important;
+}
+
+/*Animation 'jump' property*/
+@keyframes jump
+{
+    0% {top: 0px;}
+    25% {left: 5px;}
+    100% {right: 5px;}
+}
+
+
+.gameContainer
+{
+    padding: 40px;
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.container
+{
+    display: grid;
+    grid-template-rows: repeat(3, 10vw); 
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Bebas Neue', cursive;
+    background-image: linear-gradient(rgb(171, 101, 237), yellow);
+    background-image: linear-gradient(to right, rgb(51, 7, 92), rgb(238, 130, 191));
+}
+
+
+.box
+{
+    border: solid 2px black;
+    font-size: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation-delay: s;
+}
+
+.box:hover
+{
+    background-color: rgb(236, 229, 234, 0.3);
+}
+
+/*For Box borders*/
+.br-0
+{
+    border-right: 0;
+}
+
+.bl-0
+{
+    border-left: 0;
+}
+
+.bt-0
+{
+    border-top: 0;
+}
+
+.bb-0
+{
+    border-bottom: 0;
+}
+
+.boxtext
+{
+    color:white;
+}
+
+
+.gameInfo
+{
+    padding: 0px 35px;  
+    font-family: 'Baloo Bhaina 2', cursive;
+    color: aliceblue;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+
+.info
+{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 150%;
+    position: relative !important;
+}
+
+
+#reset 
+{
+    color: whitesmoke;
+    background-color: black;
+    padding: 10px 20px;
+    border: 0px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0);/* 0 6px 20px 0 rgba(0,0,0);*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: relative !important;
+    width: 100px;
+    overflow: hidden;
+}
+
+#reset:after 
+{
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1s;
+}
+  
+#reset:active:after 
+{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+
+.imgbox
+{
+    display: none;
+}
+
+.imgbox img
+{
+    width: 125px;
+    margin-top: 25px;
+}
+
+
+/*For Resposive Behaviour*/
+@media only screen and (max-width: 1060px) 
+{
+    .gameContainer
+    {
+        flex-wrap: wrap;
+        background-size: cover;
+    }
+
+    .container
+    {
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .imgbox img
+    {
+        width: 68px;
+    }
+    
+}
+
+@media only screen and (max-width: 800px) 
+{
+    .imgbox img
+    {
+        width: 50px;
+    }
+    .gameInfo
+    {
+        font-size: 0.75rem;
+    }
+    nav ul
+    {
+        font-size:30px ;
+    }
+}
