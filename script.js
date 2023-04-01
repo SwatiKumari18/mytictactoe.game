@@ -4,7 +4,7 @@ console.log("Welcome to  'MY TIC TAC TOE'")
 
 let music = new Audio("background-music.mp3")
 let turn = new Audio("ting.mp3")
-let gameOver = new Audio("gameOver.mp3")
+let gameOver = new Audio("gameover.mp3")
 let currentTurn = "X";
 let isgameover = false;
 
